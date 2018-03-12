@@ -1,0 +1,25 @@
+---
+title: "FICHE INDIVIDUELLE DE FORMATION"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(dplyr)
+library(knitr)
+
+```
+
+
+### Identification de l'agent :  
+```{r results='asis'}
+cat(paste0(Nom," ",Prenom," (",Service," / ",Groupe,")"))
+```
+
+
+## Formations souhaitées :  
+```{r tableau, results='asis',echo=FALSE}
+pander::pandoc.table(as.data.frame(GenerFI[,8]),col.names = " ", style='grid', split.table = Inf,split.cells = 120,justify='left')
+```

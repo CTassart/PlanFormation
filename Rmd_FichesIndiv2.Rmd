@@ -1,0 +1,26 @@
+---
+title: "FICHE INDIVIDUELLE DE FORMATION"
+output: word_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(dplyr)
+library(knitr)
+
+```
+
+
+### Identification de l'agent :  
+```{r results='asis'}
+cat(paste0(Nom," ",Prenom," (",Service," / ",Groupe,")"))
+```
+
+
+# Récapitulatif des formations demandées
+```{r }
+knitr::kable((GenerFI[,c(1:2,5,8)]))
+
+```
+
